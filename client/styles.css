@@ -2,9 +2,10 @@
   box-sizing: border-box
 } */
 
-/* .sean-links {
+/* .links {
   float: right;
 } */
+
 body {
   width: 100%;
 }
@@ -15,7 +16,7 @@ body {
   min-width: 625px;
 }
 
-.sean-row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
@@ -41,7 +42,7 @@ body {
   float: left;
   width: 5%;
 }
-.sean-button2 {
+.button2 {
   float: left;
   display: block;
   margin-top: calc(600% + 0px);
@@ -80,11 +81,11 @@ body {
   fill: red;
 }
 
-.sean-heart:hover {
+.heart:hover {
   cursor: pointer;
 }
 
-.sean-mainImage:hover {
+.mainImage:hover {
   cursor: zoom-in;
 }
 
@@ -104,7 +105,7 @@ body {
 }
 
 .sean-image {
-  opacity: 0sean-5;
+  opacity: 0.5;
   border: solid transparent;
   display: block;
   border-radius: 10px;

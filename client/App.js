@@ -12,12 +12,13 @@ export default class App extends React.Component {
       imageArr: [],
       mainImage: "",
       mainImageIndex: 0,
-      currentItemId: 1
+      currentItemId: 2
     };
   }
 
   onNavagateTo(id) {
     this.setState({ currentItemId: id });
+    this.rerender();
   }
 
   rerender() {
@@ -75,7 +76,6 @@ export default class App extends React.Component {
     var element = document.getElementById(`image${nextItem}`);
     element.classList.add("sean-selectedImage");
   }
-
   clickPrevious(event) {
     event.preventDefault();
     var prevItem = this.state.mainImageIndex - 1;
@@ -96,9 +96,7 @@ export default class App extends React.Component {
 
   heartClick() {
     if (document.getElementsByClassName("sean-redHeart").length !== 0) {
-      document
-        .getElementById("sean-heart")
-        .classList.remove("sean-redsean-Heart");
+      document.getElementById("sean-heart").classList.remove("sean-redHeart");
     } else {
       let element = document.getElementById("sean-heart");
       element.classList.add("sean-redHeart");
@@ -162,13 +160,13 @@ export default class App extends React.Component {
                 focusable="false"
               >
                 <path
-                  id="heart"
+                  id="sean-heart"
                   className="sean-heart"
                   d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"
                 ></path>
               </svg>
               <div
-                className="sean-rb button2"
+                className="rb button2"
                 onClick={this.clickNext.bind(this)}
               ></div>
             </div>

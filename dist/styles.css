@@ -5,11 +5,12 @@
 /* .links {
   float: right;
 } */
+
 body {
   width: 100%;
 }
 
-.row {
+.sean-row {
   width: 100%;
   /* overflow: hidden; */
   min-width: 625px;
@@ -24,18 +25,18 @@ body {
   height: 100%;
 }
 
-.imageContainer {
+.sean-imageContainer {
   display: block;
 }
 
-.columnOne {
+.sean-columnOne {
   /* position:absolute; */
   float: left;
   width: 70px;
   height: 100%;
 }
 
-.buttonColumn {
+.sean-buttonColumn {
   margin-top: calc(33% - 17px);
   padding: 10px;
   float: left;
@@ -47,7 +48,7 @@ body {
   margin-top: calc(600% + 0px);
 }
 
-.buttonColumn2 {
+.sean-buttonColumn2 {
   padding: 10px;
   display: block;
   width: 5%;
@@ -55,7 +56,7 @@ body {
   padding-right: 15px;
 }
 
-.mainImage {
+.sean-mainImage {
   display: list-item;
   border-radius: 10px;
   text-align: right;
@@ -69,14 +70,14 @@ body {
   user-select: none;
 }
 
-.heart {
+.sean-heart {
   float: right;
   fill: white;
   stroke: black;
   stroke-width: 2px;
 }
 
-.redHeart {
+.sean-redHeart {
   fill: red;
 }
 
@@ -88,7 +89,7 @@ body {
   cursor: zoom-in;
 }
 
-.mainImageColumn {
+.sean-mainImageColumn {
   float: left;
   width: 65%;
   padding: 20px;
@@ -97,13 +98,13 @@ body {
   /* overflow: hidden; */
 }
 
-.image:hover {
+.sean-image:hover {
   border: 2px solid black;
   cursor: pointer;
   opacity: 1;
 }
 
-.image {
+.sean-image {
   opacity: 0.5;
   border: solid transparent;
   display: block;
@@ -115,7 +116,7 @@ body {
   object-fit: cover;
 }
 
-.selectedImage {
+.sean-selectedImage {
   opacity: 1;
   border: 2px solid black;
 }
