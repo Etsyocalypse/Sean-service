@@ -1,77 +1,10 @@
-/* *{
-  box-sizing: border-box
-} */
-
-/* .links {
-  float: right;
-} */
-
 body {
   width: 100%;
 }
 
-.sean-row {
-  width: 100%;
-  /* overflow: hidden; */
-  min-width: 625px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  float: left;
-  /* padding: 10px; */
-  height: 100%;
-}
-
-.sean-imageContainer {
-  display: block;
-}
-
-.sean-columnOne {
-  /* position:absolute; */
-  float: left;
-  width: 70px;
-  height: 100%;
-}
-
-.sean-buttonColumn {
-  margin-top: calc(33% - 17px);
-  padding: 10px;
-  float: left;
-  width: 5%;
-}
-.button2 {
-  float: left;
-  display: block;
-  margin-top: calc(600% + 0px);
-}
-
-.sean-buttonColumn2 {
-  padding: 10px;
-  display: block;
-  width: 5%;
-  float: left;
-  padding-right: 15px;
-}
-
-.sean-mainImage {
-  display: list-item;
-  border-radius: 10px;
-  text-align: right;
-  margin: 0% auto;
-  /* margin-top: 30%; */
-  max-width: 100%;
-  max-height: 100%;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .sean-heart {
-  float: right;
+  position: absolute;
+  right: 4%;
   fill: white;
   stroke: black;
   stroke-width: 2px;
@@ -85,17 +18,29 @@ body {
   cursor: pointer;
 }
 
-.mainImage:hover {
-  cursor: zoom-in;
+.sean-mainImageDiv {
+  height: 500px;
+  /* min-height: 100%; */
+  /* max-width: 100%; */
 }
 
-.sean-mainImageColumn {
-  float: left;
-  width: 65%;
-  padding: 20px;
-  height: 90vh;
-  /* outline: auto; */
-  /* overflow: hidden; */
+.sean-mainImage {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  text-align: right;
+  margin: 0% auto;
+  object-fit: contain;
+  max-width: 100%;
+  /* max-height: 100vh; */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sean-mainImage:hover {
+  cursor: zoom-in;
 }
 
 .sean-image:hover {

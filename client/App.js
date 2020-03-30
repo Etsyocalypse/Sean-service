@@ -10,20 +10,24 @@ export default class App extends React.Component {
     this.state = {
       modalView: false,
       imageArr: [],
-      mainImage: "",
+      mainImage: " ",
       mainImageIndex: 0,
-      currentItemId: 2
+      currentItemId: 5
     };
-  }
 
-  onNavagateTo(id) {
-    this.setState({ currentItemId: id });
-    this.rerender();
+    document.addEventListener("onNavigate", ({ id }) => {
+      console.log("change pages to: ", id);
+      this.setState({ currentItemId: id }, () => {
+        this.rerender();
+      });
+    });
   }
 
   rerender() {
     axios
-      .get(`http://127.0.0.1:3030/imageurl/${this.state.currentItemId}`) //defines which ID we are going to use
+      .get(
+        `http://seanservice1-env.eba-z52ut3ea.us-east-1.elasticbeanstalk.com/imageurl/${this.state.currentItemId}`
+      ) //defines which ID we are going to use
       .then(results => {
         var mainImg = results.data[0];
         this.setState(
@@ -121,52 +125,51 @@ export default class App extends React.Component {
           show={this.state.modalView}
           close={this.modalClose.bind(this)}
         />
-        <div className="sean-row">
-          <div className="sean-columnOne">
-            {this.state.imageArr.map((item, index) => {
-              return (
-                <ColumnPic
-                  image={item}
-                  key={item}
-                  index={index}
-                  hover={this.hoverAction.bind(this)}
-                />
-              );
-            })}
-          </div>
-          <div className="sean-imageContainer">
-            <div className="sean-buttonColumn">
+        <div className="container-fluid">
+          <div className="row flex-nowrap">
+            <div className="col-md-1.5">
+              {this.state.imageArr.map((item, index) => {
+                return (
+                  <ColumnPic
+                    image={item}
+                    key={item}
+                    index={index}
+                    hover={this.hoverAction.bind(this)}
+                  />
+                );
+              })}
+            </div>
+            <div className="col-md-10 sean-mainImageDiv d-flex align-content-center">
               <p>
                 <i
                   className="sean-lb"
                   onClick={this.clickPrevious.bind(this)}
                 ></i>
               </p>
-            </div>
-            <div className="sean-mainImageColumn">
-              {/* //style={{ objectFit: "contain" }} */}
               <img
                 className="sean-mainImage"
                 src={this.state.mainImage}
                 onClick={this.modalRender.bind(this)}
               ></img>
-            </div>
-            <div className="sean-buttonColumn2">
-              <svg
-                onClick={this.heartClick.bind(this)}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 50 25"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  id="sean-heart"
-                  className="sean-heart"
-                  d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"
-                ></path>
-              </svg>
+              <div className="sean-heart">
+                <svg
+                  onClick={this.heartClick.bind(this)}
+                  xmlns="http://www.w3.org/2000/svg"
+                  // viewBox=" 10 10 10 10"
+                  width="25"
+                  height="25"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    id="sean-heart"
+                    className="sean-heart"
+                    d="M16.5,3A6.953,6.953,0,0,0,12,5.051,6.912,6.912,0,0,0,7.5,3C4.364,3,2,5.579,2,9c0,5.688,8.349,12,10,12S22,14.688,22,9C22,5.579,19.636,3,16.5,3Z"
+                  ></path>
+                </svg>
+              </div>
               <div
-                className="rb button2"
+                className="sean-rb"
                 onClick={this.clickNext.bind(this)}
               ></div>
             </div>

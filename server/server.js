@@ -6,37 +6,35 @@ const cors = require("cors");
 const data = require("../datatoinsert.json");
 const { db, getItemImages, insertItems } = require("./db");
 
-app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../dist")));
-
-var boolean = false;
-if (boolean) {
-  for (var item of data) {
-    if (item.imageArray && item.itemId >= 0) {
-      insertItems(item.itemId, item.imageArray, (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(result);
-        }
-      });
-    }
-  }
-}
 
 app.get("/imageurl/:id", (req, res) => {
   console.log("GET REQ RCVD");
   getItemImages(req.params.id, (err, results) => {
     if (err) res.send(err);
     else {
-      console.log("this is result", results);
-      var urlArr = JSON.parse(results[0].URLS);
-      console.log(urlArr.URLS);
-      res.send(urlArr);
+      if (results.length === 0) res.status(500);
+      else {
+        var urlArr = JSON.parse(results[0].imageArray);
+        res.send(urlArr);
+      }
     }
   });
 });
 
 app.listen(port, () => console.log(`Server is listening on port ${port}!`));
+
+// app.listen(port, "0.0.0.0", () =>
+//   console.log(`Server is listening on port ${port}!`)
+// );

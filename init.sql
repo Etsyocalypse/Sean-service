@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS ImageUrls;
-
-CREATE DATABASE ImageUrls;
-
 USE ImageUrls;
 
 CREATE TABLE UrlSet(
@@ -10,9 +6,3 @@ CREATE TABLE UrlSet(
 
   PRIMARY KEY(itemId)
 );
-
-
-
-
-
-
