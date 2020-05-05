@@ -10,7 +10,7 @@ A team project which recreates the product description page of the popular websi
 
 # Demo
 
-<img src='https://thumbs.gfycat.com/AridGloomyCow-size_restricted.gif' width="300px">
+<img src='https://thumbs.gfycat.com/UnhealthyLavishFoxterrier-size_restricted.gif' width="300px">
 &nbsp;&nbsp;
 <img src='https://thumbs.gfycat.com/CarefulConcernedFawn-size_restricted.gif' width="300px">
 &nbsp;&nbsp;
@@ -50,5 +50,5 @@ A team project which recreates the product description page of the popular websi
 # Work Flow
 
 We followed a Git workflow to ensure work is accomplished in a consistent and productive manner.
-<img src="https://thumbs.gfycat.com/HalfMassiveGermanpinscher-size_restricted.gif"></img>
+<img src="https://thumbs.gfycat.com/VelvetyExcitableHoopoe-size_restricted.gif"></img>
 
