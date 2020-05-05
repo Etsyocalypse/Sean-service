@@ -6,6 +6,7 @@ A team project which recreates the product description page of the popular websi
 
 - [Demo](#demo)
 - [Stack](#stack)
+- [Challenges].(#challenges)
 - [Work Flow](#work-flow)
 
 # Demo
@@ -46,6 +47,11 @@ A team project which recreates the product description page of the popular websi
     </td>
     
 </table>
+
+# Challenges
+  The biggest challenge of this project was setting up our shared database and seperate components using a reverse proxy. We ended up finding a guide on how to deploy a docker conainer using AWS. (https://medium.com/@sommershurbaji/deploying-a-docker-container-to-aws-with-elastic-beanstalk-28adfd6e7e95). After that we had to take rename all of our routes to use the deployed websites url intead of localhost:{port}. We ended up learning and utilizing bootstrap to make the CSS for our components much simpler, although it did take a few days to learn what we needed to know. 
+
+  The biggest challenge in the image gallery component was having the arrows change selected image on the column, and adding onhover css to remove the filter. The boarder around each image also caused the image column to shift when selecting a new main image or hovering over an item. This was solved by creating a white boarder around each image by default so it would not adjust the size of the image. 
 
 # Work Flow
 
