@@ -6,7 +6,7 @@ A team project which recreates the product description page of the popular websi
 
 - [Demo](#demo)
 - [Stack](#stack)
-- [Challenges].(#challenges)
+- [Challenges](#challenges)
 - [Work Flow](#work-flow)
 
 # Demo
